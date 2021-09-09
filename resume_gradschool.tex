@@ -1,0 +1,182 @@
+\documentclass[paper=a4,fontsize=12pt]{scrartcl}
+							
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{comment}
+\usepackage{lipsum}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage[left=0.5in,right=0.5in,top=0.75in,bottom=0.1in]{geometry}
+	%\textheight=600px                    % Saving trees ;-)
+\usepackage{url}
+\usepackage{comment}
+\usepackage{hyperref}
+\usepackage{etaremune}
+
+\pagestyle{empty}
+
+\setlength\parindent{0pt}
+
+\usepackage{sectsty}
+
+
+\sectionfont{%			            %
+	\usefont{OT1}{cmr}{n}{n}%		
+	\sectionrule{0pt}{0pt}{-5pt}{1pt}
+}
+\newcommand{\cvlist}{%
+% \begin{enumerate}[leftmargin=!,labelindent=5pt,itemindent=-15pt]
+
+    \rightmargin=0in
+    \leftmargin=0.15in
+    \topsep=0ex
+    \partopsep=0pt
+    \itemsep=0.2ex 
+    \parsep=0pt
+    \itemindent=0.0\leftmargin
+    \listparindent=3.0\leftmargin
+    \settowidth{\labelsep}{~}
+    \leftskip=-10.1in
+    \parindent=-0.1in
+    % \labelindent=5p
+}
+
+%\newlength{\spacebox}
+%\settowidth{\spacebox}{8888888888}			% Box to align text
+%\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+                {\centering \Huge #1
+                \par \normalsize \normalfont}}
+
+\newcommand{\NewPart}[1]{\section*{{#1}}}
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{White}{%
+			\parbox{5cm}{%
+			\hfill\color{Black}#2}} \par  % Duration
+		\noindent #3 \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+		
+\begin{document}
+
+\MyName{Aditya Rohan Sengupta}
+
+\vspace{0.4cm}
+\noindent\textbf{Email:} \url{aditya.sengupta@berkeley.edu} \hfill \textbf{Website:} \url{aditya-sengupta.github.io} 
+\vspace{-0.5cm}
+
+\NewPart{Research Interests}
+\begin{list}{}{\cvlist}
+\item Sparse statistical inference methods for exoplanet population studies
+%\item Time-series light curve analysis and detrending, information-theoretic methods
+\item Noise characterization and optimal control in adaptive optics
+\item High-performance computing methods and open-source programming for astronomy
+\end{list}
+
+\NewPart{Education}
+
+\EducationEntry{\noindent University of Cambridge; Master of Advanced Study}{Oct 2021-Jun 2022}{Part III of the Mathematical Tripos (Applied Mathematics); Girton College, Cambridge}{}
+
+\EducationEntry{\noindent University of California, Berkeley; Bachelor of Science}{Aug 2017-May 2021}{B.S., Engineering Physics; B.S., Engineering Mathematics and Statistics; GPA 3.822}{\textbf{Relevant Coursework (*graduate-level)}\\ Manifolds*, Information Theory*, Numerical Simulation and Modeling*, Real \& Complex Analysis, Abstract Algebra, Probability \& Random Processes, Machine Learning, Control Systems, Optical Engineering, Quantum Mechanics, Analytic Mechanics, Cosmology, Statistical Mechanics, Advanced Experimentation}
+\noindent
+
+\vspace{-0.5cm}
+\NewPart{Research and Projects}
+
+\EducationEntry{Exoplanet Probabilistic Modeling with \textit{TESS}}{2020-present}{
+\textit{Advisor}: Prof. Courtney Dressing\\
+Senior year project: analyzing exoplanet populations using \textit{TESS} data products and time-series analysis.
+
+\begin{list}{\textbullet}{\cvlist}
+    \item Improved models and optimization framework to fit the \textit{TESS} point-spread-function to light curves in the \textit{eleanor} Python package.
+    \item Developing methods for probabilistic inference from \textit{TESS} full-frame images, through Markov chain Monte Carlo analysis of injection/recovery testing results.
+    \item Assessing impact on occurrence rates using Approximate Bayesian Computing.
+\end{list}
+}
+\hfill
+
+\EducationEntry{Coding and Information Analysis for the \textit{SPRIGHT} Algorithm}{2020}{
+\textit{Advisor}: Prof. Kannan Ramchandran, Amirali Aghazadeh, Orhan Ocal\\
+Final project for EECS 229A: Information Theory and Coding.
+\begin{list}{\textbullet}{\cvlist}
+    \item Implemented the \textit{SPRIGHT} sparse Walsh-Hadamard transform algorithm in Python and Julia.
+    \item Created information-theoretic extensions for improved time and sample efficiency.
+    \item Registered implementation as the {\color{blue}\href{github.com/aditya-sengupta/SparseTransforms.jl}{SparseTransforms.jl}} Julia package.
+\end{list}
+}
+\hfill
+
+\EducationEntry{Optimal Tip-Tilt Correction for Adaptive Optics}{2019}{
+\textit{Advisor}: Dr. Rebecca Jensen-Clem (now Assistant Prof., UC Santa Cruz)
+\begin{list}{\textbullet}{\cvlist}
+\setlength\itemsep{0pt}
+\item Simulated control schemes for the tip and tilt modes of aberrations in an adaptive optics system. 
+\item Demonstrated improved correction through model predictive control using a Kalman filter.
+\item Analyzed telemetry and outlined plans for future lab testing to adapt to Keck II.
+\end{list}
+}
+\hfill
+
+\EducationEntry{Pyramid Wavefront Sensor Simulation for the Keck Telescopes}{2018}{
+\textit{Advisor}: Dr. Rebecca Jensen-Clem
+\begin{list}{\textbullet}{\cvlist}
+\item Simulated an adaptive optics loop with a pyramid wavefront sensor, newly installed at Keck II. 
+\item Demonstrated imaging quality improvements due to predictive control algorithms. 
+\item Conducted testing and QA for the \textit{hcipy} Python package.
+\end{list}
+}
+\newpage
+\NewPart{Publications and Posters}
+
+\begin{etaremune}
+    \setlength{\itemsep}{0pt}
+    \item \textbf{Aditya R. Sengupta}, Benjamin T. Montet, Kaiming Cui, Adina D. Feinstein, Courtney D. Dressing, 2021. ``Improved PSF Fits for TESS Lightcurve Detrending.'' Poster, \textit{AAS 237}, Virtual.
+    \item \textbf{Aditya R. Sengupta} and Rebecca Jensen-Clem, 2020. ``Kalman Filtering for Tip-Tilt Correction in Adaptive Optics.'' \textit{Research Notes of the American Astronomical Society}.
+    \item Samantha Guzm\'{a}n, Jesus Martinez and 5 others including \textbf{Aditya R. Sengupta}, 2020. ``Accessible Balloon RAdiometer: Detecting the Cosmic Microwave Background.'' Poster, \textit{Undergraduate Lab at Berkeley Final Presentations}.
+    \item \textbf{Aditya R. Sengupta} and Rebecca Jensen-Clem, 2019. ``Optimal Filtering for Tip-Tilt Correction in Adaptive Optics.'' Poster, \textit{Center for Adaptive Optics Fall Retreat}, 2019.
+    \item \textbf{Aditya R. Sengupta}, Eden McEwen, Shide Dehghani, Rebecca Jensen-Clem, ``Demonstrating Predictive Wavefront Control at Keck II: Simulating a Pyramid Wavefront Sensor.'' Poster, \textit{UC Berkeley Astronomy Poster Summer Intern Symposium}, 2018.
+\end{etaremune}
+
+\NewPart{Talks}
+
+\begin{etaremune}
+    \item ``System Identification for Tip-Tilt Mirrors in Adaptive Optics". Lamat REU Final Presentations, UC Santa Cruz, August 2021.
+    \item ``Effective Real-World Scientific Computing". UC Berkeley Society of Physics Students Undergraduate Seminars, Mar 2021.
+    \item ``Improved PSF Fits for TESS Lightcurve Detrending" AAS 237, Jan 2021.
+    \item ``Optimal Filtering for Tip-Tilt Correction in Adaptive Optics''. Talk to Dressing research group, Nov 2019.
+\end{etaremune}
+
+\NewPart{Teaching and Mentorship}
+
+\EducationEntry{Instruction and Tutoring}{Jan 2018-May 2021}{\vspace{-0.5cm}
+    \begin{list}{\textbullet}{\cvlist}
+        \setlength{\itemsep}{0pt}
+        \item Instructor, Democratic Education at Cal, Spring 2021. \textit{Physics 198: Physics-based High-Performance and Scientific Computing and Technology (\color{blue} \href{physcat-decal.com}{physcat-decal.com})}. (faculty sponsor: Yury Kolomensky.)
+        \item Undergraduate Student Instructor, Fall 2020 and Spring 2021. \textit{EECS 126: Probability and Random Processes} (instructors: Shyam Parekh, Thomas Courtade). Developed new Jupyter notebook lab assignment on the Kalman filter; wrote new official course notes.
+        \item Study Group Facilitator, UC Berkeley Student Learning Center, Spring 2020. \textit{Math 53: Multivariable Calculus}, (instructor: Emiliano Gomez, supervisor: Michael J. Wong). Developed and taught twice-weekly problem solving worksheets.
+        \item Tutor, Spring 2018-Fall 2020, UC Berkeley Student Learning Center (SLC), for Mathematics 1A, 1B, 16A, 16B (single-variable calculus), 53 (multivariable calculus), 54 (linear algebra).
+        \item Tutor/Reader, Spring 2019-Spring 2020, for Data Structures, Control Systems, Probability.
+        \item Splash at Berkeley, Spring 2021: ``Scientific Computing Basics".
+        \item Personal expository papers and course notes available at {\color{blue} \href{aditya-sengupta.github.io/notes.html}{aditya-sengupta.github.io/notes.html}}.
+    \end{list}
+}\hfill
+
+\EducationEntry{Curriculum Chair, Undergraduate Lab at Berkeley}{May 2020-May 2021}{Created instructional modules, gave lectures, oversaw content development to introduce new researchers to essential skills: programming/Git, research literacy, communication, statistics.
+}
+
+\EducationEntry{Mentor, Undergraduate Lab at Berkeley}{Aug 2019-May 2020}{Led an independent research team of freshman/sophomore-level physics students to construct a Cosmic Microwave Background detector. Ran subgroups for detector printed-circuit-board design, mechanical construction, data denoising and inference algorithms. Progress halted due to COVID-19 pandemic.}
+
+\EducationEntry{Simulations Co-Lead, STAR at Berkeley}{June 2018-April 2019}{Established Simulations subteam of UC Berkeley's high-powered rocketry team. Ran structural finite-element and computational fluid analyses, established standard tools, wrote internal club documentation.
+}
+
+\NewPart{Technical Skills}
+\textbf{Proficient}: Julia, Python, \LaTeX\\
+\textbf{Familiar}: Matlab, SQL, ANSYS Structural, ANSYS CFD, Solidworks, Zemax, KiCAD\\
+\textbf{Interests}: MCMC, open-source software, high-performance computing, amateur radio.
+
+\end{document}

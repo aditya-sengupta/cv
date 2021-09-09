@@ -1,0 +1,136 @@
+\documentclass[paper=a4,fontsize=10pt]{scrartcl}
+							
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{comment}
+\usepackage{lipsum}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage[left=0.5in,right=0.5in,top=0.5in,bottom=0.1in]{geometry}
+	%\textheight=600px                    % Saving trees ;-)
+\usepackage{url}
+\usepackage{comment}
+
+\pagestyle{empty}           
+
+\usepackage{sectsty}
+
+
+\sectionfont{%			            % Change font of \section command
+	%\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{1pt}
+}
+
+
+%\newlength{\spacebox}
+%\settowidth{\spacebox}{8888888888}			% Box to align text
+%\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+                \Huge \hfill #1
+                \par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{{#1}}}
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{White}{%
+			\parbox{5cm}{%
+			\hfill\color{Black}#2}} \par  % Duration
+		\noindent #3 \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+		
+\begin{document}
+
+\MyName{Aditya Rohan Sengupta}
+
+\vspace{0.4cm}
+\noindent\textbf{Email:} \url{aditya.sengupta@berkeley.edu} \hspace{0.5cm} \textbf{Website:} \url{aditya-sengupta.github.io} \hspace{0.5cm} \textbf{Phone :} +1 (510) 697 6549
+\vspace{-0.5cm}
+\NewPart{Education}{}
+
+\noindent\EducationEntry{University of Cambridge; Master of Advanced Study in Applied Mathematics}{Oct 2021-Jun 2022}{Part III of the Mathematical Tripos; Girton College, Cambridge} 
+
+\noindent\EducationEntry{University of California, Berkeley; Bachelor of Science}{Aug 2017-May 2021}{Engineering Physics/Engineering Mathematics and Statistics double major; GPA 3.822}{\noindent\textbf{Relevant Coursework (graduate-level*)}\\\underline{Math/Stat} - Probability \& Random Processes, Differentiable Manifolds*, Abstract Algebra, Analysis, Linear Algebra\\\underline{EECS} - Numerical Simulation*, Information Theory*, Machine Learning, Control Systems, Signals, Optical Engineering\\ \underline{Physics} - Advanced Experimentation, Quantum Mechanics, Analytic Mechanics, E\&M/Optics, Cosmology, Statistical Mechanics}
+\noindent
+
+\vspace{-0.5cm}
+\NewPart{Experience}{}
+
+\EducationEntry{Lamat Fellow, UC Santa Cruz Astronomy}{May-August 2021}{
+\underline{System Identification for Tip-Tilt Mirrors}, with Prof. Rebecca Jensen-Clem and Dr. Benjamin Gerard
+}
+
+\EducationEntry{Researcher, UC Berkeley Astronomy and EECS}{May 2018-present}{
+\vspace{-0.3cm}
+\noindent\underline{Exoplanet Probabilistic Modeling with \textit{TESS}}, with Prof. Courtney Dressing (ongoing)
+\begin{itemize}
+    \setlength\itemsep{0.1em}
+    \item Applying Approximate Bayesian Computation to data from NASA's Transiting Exoplanet Survey Satellite for exoplanet occurrence estimates.
+    \vspace{-0.15cm}
+    \item Creating framework to better correct for telescope optics in \textit{TESS} imaging data, for improved exoplanet detection.
+    \vspace{-0.15cm}
+    \item Analyzing TESS instrument systematics to build a model for the probability of observing a transit.
+    \vspace{-0.15cm}
+\end{itemize}
+
+\noindent\underline{Optimal Tip-Tilt Correction for Adaptive Optics}, with Dr. Rebecca Jensen-Clem (now Asst. Prof, UC Santa Cruz)
+\begin{itemize}
+\vspace{-0.3cm}
+\setlength\itemsep{-0.3em}
+    \item Simulated control schemes in tip-tilt wavefront correction, verified with telemetry data from Keck telescopes.
+    \item Showed improvements over empirical integrator through physics-based model predictive control incorporating hardware loop delays, atmospheric turbulence, vibrations.
+    %\item Simulation verification complete; real-life testing underway at new UC Berkeley adaptive optics test bench.
+    %\item Wrote tutorial and reference documentation on tip-tilt correction.
+    \item Invited to Center for Adaptive Optics Fall Retreat 2019 to discuss and share work.
+\end{itemize}
+\underline{Pyramid Wavefront Sensor Simulation for the Keck Telescopes}, with Dr. Rebecca Jensen-Clem
+\begin{itemize}
+\vspace{-0.15cm}
+\setlength\itemsep{-0.3em}
+    \item Created simulation of an adaptive optics loop with a pyramid wavefront sensor, newly installed at Keck II.
+    \item Demonstrated imaging quality improvements due to predictive control algorithms, to be implemented at Keck.
+    \item Conducted testing and QA for HCIPy (High Contrast Imaging for Python) library.
+\end{itemize}
+}
+
+\EducationEntry{Teaching: UC Berkeley EECS, UC Berkeley Student Learning Center}{Jan 2018-May 2021}{
+\begin{itemize}
+\vspace{-0.15cm}
+\setlength\itemsep{-0.3em}
+\item Teaching Assistant for EECS 126, Probability \& Random Processes. Designed lab assignment on Kalman filtering, to visualize and practically implement difficult concepts. Co-wrote official course notes, supplemental material.
+\item Multivariable Calculus Study Group Leader: designed worksheets for, taught twice-weekly discussion-style sections.
+\item Mathematics tutor for lower-division courses at Berkeley Student Learning Center, for calculus and linear algebra.
+\item Tutor/Reader for Probability and Random Processes, Data Structures, Control Systems.
+\end{itemize}}
+
+\vspace{-0.15cm}
+\EducationEntry{Undergraduate Lab at Berkeley: Curriculum Chair and Mentor}{Aug 2019-May 2021}{
+\begin{itemize}
+\vspace{-0.15cm}
+\setlength\itemsep{-0.3em}
+\item Writing and managing lab-wide instructional modules to introduce aspiring researchers to essential skills: programming/Git, research literacy and communication, statistics, PCB design.
+\item Leading an independent research team of freshman/sophomore level physics students to construct a Cosmic Microwave Background detector, by taking radiometer observations from a weather balloon.
+\item Managing subgroups for detector circuit-board design, mechanical construction, and data denoising and inference algorithms; working individually with mentees to match subprojects to future plans. 
+\end{itemize}}
+
+\EducationEntry{Space Technology and Rocketry (STAR) at Berkeley}{Aug 2017-Aug 2019}{
+\begin{itemize}
+\vspace{-0.15cm}
+\setlength\itemsep{-0.3em}
+\item Co-lead for new Simulations subteam on UC Berkeley's high-powered rocketry team. Responsible for training members, documenting procedures, liaising with team to produce actionable simulation results.
+\item Built first-principles rocket flight simulation and Kalman filter for optimal parachute deployment timing.
+%\item Designed/analyzed flight black box, contributed to liquid bipropellant engine model (thermal/fluid).
+\item Optimized geometry of airframe transition section for aerodynamics and load bearing via ANSYS simulations.
+\end{itemize}}
+
+\noindent
+\textbf{Skills}: High-dimensional statistics and MCMC, time-series filtering and modelling, first-principles physical simulations\\
+\textbf{Programming languages}: Python, Julia, Java, Matlab, LaTeX\\
+\textbf{Engineering tools}: ANSYS Structural, ANSYS CFD, SimScale, Solidworks, Zemax, KiCAD
+
+
+\end{document}
